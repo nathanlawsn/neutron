@@ -1,0 +1,13 @@
+name: STARTERKIT
+description: 'A Neutron sub-theme by Consult and Design.'
+
+package: custom
+type: theme
+
+core: 8.x
+version: 1.0
+
+base theme: classy
+
+libraries:
+  - STARTERKIT/global-styling
