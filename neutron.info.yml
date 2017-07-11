@@ -1,0 +1,13 @@
+name: Neutron
+description: 'Base theme for all Consult and Design projects.'
+
+package: custom
+type: theme
+
+core: 8.x
+version: 1.0
+
+base theme: classy
+
+libraries:
+  - neutron/global-styling

@@ -1,0 +1,15 @@
+// Import external libraries
+@import "compass";
+@import 'modular-scale';
+@import "singularitygs";
+@import "breakpoint";
+
+// Import Sass partials
+@import "variables/**/*";
+@import "abstractions/**/*";
+@import "base/**/*";
+@import "components/**/*";
+
+* {
+  box-sizing: border-box;
+}

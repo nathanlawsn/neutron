@@ -1,0 +1,17 @@
+.form {
+  &-text,
+  &-email,
+  &-search,
+  &-password,
+  &-textarea {
+    -webkit-appearance: none;
+    width: 100%;
+    display: block;
+    @include breakpoint($desktop) {
+      width: auto;
+    }
+  }
+  &-submit {
+    -webkit-appearance: none;
+  }
+}

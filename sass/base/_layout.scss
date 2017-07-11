@@ -1,0 +1,19 @@
+header,
+footer,
+[class^="layout-"] {
+  @include clearfix;
+}
+.layout-container {
+  padding: 0 2.5em;
+  @include breakpoint($tablet) {
+    max-width: $tablet;
+    padding: 0 1.25em;
+    margin: 0 auto;
+  }
+  @include breakpoint($desktop) {
+    max-width: $desktop;
+  }
+  @include breakpoint($wide) {
+    max-width: $wide;
+  }
+}
