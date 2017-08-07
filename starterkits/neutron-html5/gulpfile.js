@@ -1,6 +1,7 @@
 'use strict';
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var connect = require('gulp-connect');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var importer = require('node-sass-globbing');
@@ -21,7 +22,7 @@ var sass_config = {
   ]
 };
 
-// Compiles Sass
+// Compile Sass
 gulp.task('sass', function () {
   gulp.src('./sass/**/*.scss')
     .pipe(plumber())
@@ -33,10 +34,18 @@ gulp.task('sass', function () {
     .pipe(stripCssComments({preserve: false}))
     .pipe(cssmin())
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./css'));
+    .pipe(gulp.dest('./css'))
+    .pipe(connect.reload());
 });
 
-// Uglifies JavaScript
+// LiveReload
+gulp.task('connect', function() {
+    connect.server({
+        livereload: true
+    });
+});
+
+// Minify JavaScript
 gulp.task('uglify', function() {
   return gulp.src('js/*.js')
     .pipe(uglify())
@@ -45,15 +54,16 @@ gulp.task('uglify', function() {
 
 // Watch for file changes
 gulp.task('watch', function(){
-  livereload.listen();
-    gulp.watch('./sass/**/*.scss', ['sass']);
-    gulp.watch('./js/*.js', ['uglify']);
-    gulp.watch(['./css/styles.css', './**/*.twig', './js/minified/*.js'], function (files){
-      livereload.changed(files)
-    });
+  gulp.watch('./sass/**/*.scss', ['sass']);
+  gulp.watch('./js/*.js', ['uglify']);
+  gulp.watch(['./css/styles.css', './**/*.twig', './js/minified/*.js'], function (files){
+  });
 });
 
 // Run Drush to clear cache
 gulp.task('drush', shell.task([
   'drush cache-clear'
 ]));
+
+// Default Gulp task
+gulp.task('default', ['watch', 'connect']);
