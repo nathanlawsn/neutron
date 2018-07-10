@@ -1,0 +1,35 @@
+THEMENAME.mobile:
+  label: mobile
+  mediaQuery: '(max-width: 47.99em)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+THEMENAME.narrow:
+  label: narrow
+  mediaQuery: 'all and (min-width: 48em) and (max-width: 59.99em)'
+  weight: 1
+  multipliers:
+    - 1x
+    - 2x
+THEMENAME.normal:
+  label: normal
+  mediaQuery: 'all and (min-width: 60em) and (max-width: 74.99em)'
+  weight: 2
+  multipliers:
+    - 1x
+    - 2x
+THEMENAME.desktop:
+  label: desktop
+  mediaQuery: 'all and (min-width: 60em)'
+  weight: 3
+  multipliers:
+    - 1x
+    - 2x
+THEMENAME.wide:
+  label: wide
+  mediaQuery: 'all and (min-width: 75em)'
+  weight: 4
+  multipliers:
+    - 1x
+    - 2x
