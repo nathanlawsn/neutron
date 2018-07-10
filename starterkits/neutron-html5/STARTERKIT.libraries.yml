@@ -1,7 +1,0 @@
-global-styling:
-  css:
-    theme:
-      css/styles.css: {}
-
-  js:
-    js/minified/scripts.js: {}

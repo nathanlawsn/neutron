@@ -1,5 +1,5 @@
-name: Neutron
-description: 'Base theme for all Consult and Design projects.'
+name: THEMENAME
+description: 'Starter theme for all Consult and Design projects.'
 
 package: custom
 type: theme
